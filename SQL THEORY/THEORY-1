@@ -1,0 +1,69 @@
+/* BASIC THEORY */
+
+ QUERY 1:
+ SQL is widely popular because it offers the following advantages −
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ANS1:
+
+Allows users to access data in the relational database management systems.
+
+Allows users to describe the data.
+
+Allows users to define the data in a database and manipulate that data.
+
+Allows to embed within other languages using SQL modules, libraries & pre-compilers.
+
+Allows users to create and drop databases and tables.
+
+Allows users to create view, stored procedure, functions in a database.
+
+Allows users to set permissions on tables, procedures and views.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+QUESTION 2:
+
+When you are executing an SQL command for any RDBMS, the system determines the best way to carry out your request and SQL engine figures out how to interpret the task.
+
+There are various components included in this process.
+
+These components are −
+
+Query Dispatcher
+Optimization Engines
+Classic Query Engine
+SQL Query Engine, etc.
+A classic query engine handles all the non-SQL queries, but a SQL query engine won't handle logical files.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+QUESTIONS 3:
+WHAT IS RDBMS.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+RDBMS stands for Relational Database Management System. RDBMS is the basis for SQL, and for all modern database systems like MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.
+
+A Relational database management system (RDBMS) is a database management system (DBMS) that is based on the relational model as introduced by E. F. Codd.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+QUESTION 4:
+WHAT IS NULL VALUE
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A NULL value in a table is a value in a field that appears to be blank, which means a field with a NULL value is a field with no value.
+
+It is very important to understand that a NULL value is different than a zero value or a field that contains spaces. A field with a NULL value is the one that has been left blank during a record creation
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+QUESTION 5:
+WHAT IS NORMALIZATION.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Database normalization is the process of efficiently organizing data in a database. There are two reasons of this normalization process −
+
+Eliminating redundant data, for example, storing the same data in more than one table.
+
+Ensuring data dependencies make sense.
+
+Both these reasons are worthy goals as they reduce the amount of space a database consumes and ensures that data is logically stored. Normalization consists of a series of guidelines that help guide you in creating a good database structure.
+
+Normalization guidelines are divided into normal forms; think of a form as the format or the way a database structure is laid out. The aim of normal forms is to organize the database structure, so that it complies with the rules of first normal form, then second normal form and finally the third normal form.
+
+It is your choice to take it further and go to the fourth normal form, fifth normal form and so on, but in general, the third normal form is more than enough.
+
+First Normal Form (1NF)
+Second Normal Form (2NF)
+Third Normal Form (3NF)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
