@@ -1,0 +1,190 @@
+UNIQUE CONSTRAINT
+=================================================================================================================================================================================
+The UNIQUE constraint ensures that all values in a column are different.
+
+Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.
+
+A PRIMARY KEY constraint automatically has a UNIQUE constraint.
+
+However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.
+=====================================================================================================================================================================================
+PRIMARY KEY CONSTRAINT
+===============================================================================================================================================================================
+SQL PRIMARY KEY Constraint
+The PRIMARY KEY constraint uniquely identifies each record in a table.
+
+Primary keys must contain UNIQUE values, and cannot contain NULL values.
+
+A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).
+================================================================================================================================================================================
+FOREIGN KEY CONSTRAINT
+=============================================================================================================================================================================
+SQL FOREIGN KEY Constraint
+SQL FOREIGN KEY Constraint
+The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+
+The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent tablE
+The FOREIGN KEY constraint prevents invalid data from being inserted into the foreign key column, because it has to be one of the values contained in the parent table.
+===============================================================================================================================================================================
+CHECK CONSTRAINT
+==============================================================================================================================================================================
+The CHECK constraint is used to limit the value range that can be placed in a column.
+
+If you define a CHECK constraint on a column it will allow only certain values for this column.
+
+If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.
+===============================================================================================================================================================================
+SQL DEFAULT Constraint
+==============================================================================================================================================================================
+The DEFAULT constraint is used to set a default value for a column.
+
+The default value will be added to all new records, if no other value is specified.
+============================================================================================================================================================================
+SQL CREATE INDEX Statement
+============================================================================================================================================================================
+The CREATE INDEX statement is used to create indexes in tables.
+
+Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+
+Note: Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be frequently searched against.
+
+CREATE INDEX Syntax
+Creates an index on a table. Duplicate values are allowed:
+
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+CREATE UNIQUE INDEX Syntax
+Creates a unique index on a table. Duplicate values are not allowed:
+
+CREATE UNIQUE INDEX index_name
+================================================================================================================================================================================
+AUTO INCREMENT Field
+===============================================================================================================================================================================
+Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+
+Often this is the primary key field that we would like to be created automatically every time a new record is inserted.
+MySQL uses the AUTO_INCREMENT keyword to perform an auto-increment feature.
+
+By default, the starting value for AUTO_INCREMENT is 1, and it will increment by 1 for each new record.
+
+To let the AUTO_INCREMENT sequence start with another value, use the following SQL statement:
+
+ALTER TABLE Persons AUTO_INCREMENT=100;
+===========================================================================================================================================================================
+SQL DATE
+============================================================================================================================================================================
+The most difficult part when working with dates is to be sure that the format of the date you are trying to insert, matches the format of the date column in the database.
+
+As long as your data contains only the date portion, your queries will work as expected. However, if a time portion is involved, it gets more complicated.
+
+SQL Date Data Types
+MySQL comes with the following data types for storing a date or a date/time value in the database:
+
+DATE - format YYYY-MM-DD
+DATETIME - format: YYYY-MM-DD HH:MI:SS
+TIMESTAMP - format: YYYY-MM-DD HH:MI:SS
+YEAR - format YYYY or YY
+SQL Server comes with the following data types for storing a date or a date/time value in the database:
+
+DATE - format YYYY-MM-DD
+DATETIME - format: YYYY-MM-DD HH:MI:SS
+SMALLDATETIME - format: YYYY-MM-DD HH:MI:SS
+TIMESTAMP - format: a unique number
+Note: The date types are chosen for a column when you create a new table in your database!
+============================================================================================================================================================================
+SQL CREATE VIEW Statement
+==========================================================================================================================================================================
+In SQL, a view is a virtual table based on the result-set of an SQL statement.
+
+A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
+
+You can add SQL statements and functions to a view and present the data as if the data were coming from one single table.
+
+A view is created with the CREATE VIEW statement. 
+
+CREATE VIEW Syntax
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+//Note: A view always shows up-to-date data! The database engine recreates the view, every time a user queries it.//
+==============================================================================================================================================================================\
+SQL INJECTION
+================================================================================================================================================================================
+SQL injection is a code injection technique that might destroy your database.
+
+SQL injection is one of the most common web hacking techniques.
+
+SQL injection is the placement of malicious code in SQL statements, via web page input.
+
+SQL in Web Pages
+SQL injection usually occurs when you ask a user for input, like their username/userid, and instead of a name/id, the user gives you an SQL statement that you will unknowingly run on your database.
+
+Look at the following example which creates a SELECT statement by adding a variable (txtUserId) to a select string. The variable is fetched from user input (getRequestString):
+
+Example
+txtUserId = getRequestString("UserId");
+txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
+The rest of this chapter describes the potential dangers of using user input in SQL statements.
+
+SQL Injection Based on 1=1 is Always True
+Look at the example above again. The original purpose of the code was to create an SQL statement to select a user, with a given user id.
+
+If there is nothing to prevent a user from entering "wrong" input, the user can enter some "smart" input like this:
+
+UserId: 
+105 OR 1=1
+
+Then, the SQL statement will look like this:
+
+SELECT * FROM Users WHERE UserId = 105 OR 1=1;
+The SQL above is valid and will return ALL rows from the "Users" table, since OR 1=1 is always TRUE.
+
+Does the example above look dangerous? What if the "Users" table contains names and passwords?
+
+The SQL statement above is much the same as this:
+
+SELECT UserId, Name, Password FROM Users WHERE UserId = 105 or 1=1;
+A hacker might get access to all the user names and passwords in a database, by simply inserting 105 OR 1=1 into the input field.
+===============================================================================================================================================================================
+SQL Hosting
+==============================================================================================================================================================================
+If you want your web site to be able to store and retrieve data from a database, your web server should have access to a database-system that uses the SQL language.
+
+If your web server is hosted by an Internet Service Provider (ISP), you will have to look for SQL hosting plans.
+
+The most common SQL hosting databases are MS SQL Server, Oracle, MySQL, and MS Access.
+
+MS SQL Server
+Microsoft's SQL Server is a popular database software for database-driven web sites with high traffic.
+
+SQL Server is a very powerful, robust and full featured SQL database system.
+
+Oracle
+Oracle is also a popular database software for database-driven web sites with high traffic.
+
+Oracle is a very powerful, robust and full featured SQL database system.
+
+MySQL
+MySQL is also a popular database software for web sites.
+
+MySQL is a very powerful, robust and full featured SQL database system.
+
+MySQL is an inexpensive alternative to the expensive Microsoft and Oracle solutions.
+
+MS Access
+When a web site requires only a simple database, Microsoft Access can be a solution.
+
+MS Access is not well suited for very high-traffic, and not as powerful as MySQL, SQL Server, or Oracle.
+=============================================================================================================================================================================
+
+
+
+
+
+
+
+
+
